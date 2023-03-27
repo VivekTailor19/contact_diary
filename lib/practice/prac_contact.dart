@@ -2,12 +2,18 @@ import 'package:contact_diary/practice/contactModel.dart';
 import 'package:flutter/material.dart';
 
 List<ContactModel> contactList = [
-  ContactModel(name: "VIVEK", no: 000001),
-  ContactModel(name: "NARENDRA MODI", no: 000123, img: "Modi"),
-  ContactModel(name: "Pawar", no: 005464),
-  ContactModel(name: "GAUTAM ADANI", no: 009864),
-  ContactModel(name: "RATAN TATA", no: 00004, img: "TATA"),
-  ContactModel(name: "BABURAV APTE", no: 000002, img: "Apte"),
+  ContactModel(name: "VIVEK", no: 1000001),
+  ContactModel(name: "NARENDRA MODI", no: 1000123, img: "Modi"),
+  ContactModel(name: "Pawar", no: 1005464),
+  ContactModel(name: "GAUTAM ADANI", no: 1009864),
+  ContactModel(name: "RATAN TATA", no: 1000004, img: "TATA"),
+  ContactModel(name: "BABURAV APTE", no: 1000002, img: "Apte"),
+  ContactModel(name: "VIVEK", no: 1000001),
+  ContactModel(name: "NARENDRA MODI", no: 1000123, img: "Modi"),
+  ContactModel(name: "Pawar", no: 1005464),
+  ContactModel(name: "GAUTAM ADANI", no: 1009864),
+  ContactModel(name: "RATAN TATA", no: 1000004, img: "TATA"),
+  ContactModel(name: "BABURAV APTE", no: 1000002, img: "Apte"),
 ];
 
 class Prac_Contact_Display extends StatefulWidget {
