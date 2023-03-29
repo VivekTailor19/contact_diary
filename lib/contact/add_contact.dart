@@ -30,7 +30,7 @@ class _Add_ContactState extends State<Add_Contact> {
             child: Column(
               children: [
 
-                  loca == null ?  CircleAvatar(backgroundImage:  AssetImage("assets/images/person.jpg"),radius: 80,) :
+                  loca == null ?  CircleAvatar(backgroundImage:  AssetImage("assets/images/person.jpg"),radius: 60,) :
                        CircleAvatar(radius: 80,backgroundImage: FileImage(File("$loca")),),
 
                 Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
