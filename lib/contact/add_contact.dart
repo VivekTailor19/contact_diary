@@ -57,6 +57,7 @@ class _Add_ContactState extends State<Add_Contact> {
                   ContactModel c_add = ContactModel(name: name,no : contact);
 
                   contactList.add(c_add);
+
                   Navigator.pop(context);
 
 
