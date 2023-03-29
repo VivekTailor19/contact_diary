@@ -1,21 +1,23 @@
 
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 import 'contactModel.dart';
 
 List<ContactModel> contactList = [
+  ContactModel(name: "VIVEK", no: 1000001,),
+  ContactModel(name: "NARENDRA MODI", no: 1000123, img: "assets/images/modi.png"),
+  ContactModel(name: "Pawar", no: 1005464),
+  ContactModel(name: "GAUTAM ADANI", no: 1009864,img: "assets/images/adani.png"),
+  ContactModel(name: "RATAN TATA", no: 1000004, img: "assets/images/tata.png"),
+  ContactModel(name: "BABURAV APTE", no: 1000002, img: "assets/images/baburav.png"),
   ContactModel(name: "VIVEK", no: 1000001),
-  ContactModel(name: "NARENDRA MODI", no: 1000123, img: "Modi"),
+  ContactModel(name: "NARENDRA MODI", no: 1000123, img: "assets/images/modi.png"),
   ContactModel(name: "Pawar", no: 1005464),
   ContactModel(name: "GAUTAM ADANI", no: 1009864),
-  ContactModel(name: "RATAN TATA", no: 1000004, img: "TATA"),
-  ContactModel(name: "BABURAV APTE", no: 1000002, img: "Apte"),
-  ContactModel(name: "VIVEK", no: 1000001),
-  ContactModel(name: "NARENDRA MODI", no: 1000123, img: "Modi"),
-  ContactModel(name: "Pawar", no: 1005464),
-  ContactModel(name: "GAUTAM ADANI", no: 1009864),
-  ContactModel(name: "RATAN TATA", no: 1000004, img: "TATA"),
-  ContactModel(name: "BABURAV APTE", no: 1000002, img: "Apte"),
+  ContactModel(name: "RATAN TATA", no: 1000004, img: "assets/images/tata.png"),
+  ContactModel(name: "BABURAV APTE", no: 1000002, img: "assets/images/baburav.png"),
 ];
 
 class Prac_Contact_Display extends StatefulWidget {
@@ -75,7 +77,7 @@ class _Prac_Contact_DisplayState extends State<Prac_Contact_Display> {
     return ListTile(
         title: Text("${c.name}",style: TextStyle(fontWeight: FontWeight.bold,fontSize:20)),
         subtitle: Text("${c.no}",style: TextStyle(fontSize: 15)),
-        leading: c.img == null?Icon(Icons.person_outline,size: 25,):Text("$c.img",style: TextStyle(fontSize: 20),),
+        leading: c.img == null ? CircleAvatar(backgroundImage:  AssetImage("assets/images/person.jpg"),radius: 25,):CircleAvatar(radius: 25,backgroundImage: AssetImage("${c.img}",),),
 
     );
   }
