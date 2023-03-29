@@ -38,31 +38,44 @@ class _Prac_Contact_DisplayState extends State<Prac_Contact_Display> {
           centerTitle: true,
           elevation: 0,
         ),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add,size: 20,),
+          backgroundColor: Colors.teal.shade700,
+          onPressed: () {
+            Navigator.pushNamed(context, "addcontact").then((value) {
+              setState(() {
+
+              });
+            });
+          },
+        ),
         body: Column(
           children: [
+            SizedBox(height: 15),
             Expanded(
               child: ListView.builder(
+
               itemCount: contactList.length,
               itemBuilder: (context, index) {
-                return ContactTile(
-                    name: contactList[index].name, no: contactList[index].no, img: contactList[index].img
-                );
+                return ContactTile(contactList[index]);
                 },
           ),
             ),
-            
+            SizedBox(height: 5),
+
+
         ]
 
       ),
     ));
   }
 
-  Widget ContactTile({String? name, String? img, int? no})
+  Widget ContactTile (ContactModel c)
   {
     return ListTile(
-        title: Text("$name",style: TextStyle(fontWeight: FontWeight.bold,fontSize:20)),
-        subtitle: Text("$no",style: TextStyle(fontSize: 15)),
-        leading: (img==null)?Icon(Icons.person_outline,size: 25,):Text("$img",style: TextStyle(fontSize: 20),),
+        title: Text("${c.name}",style: TextStyle(fontWeight: FontWeight.bold,fontSize:20)),
+        subtitle: Text("${c.no}",style: TextStyle(fontSize: 15)),
+        leading: c.img == null?Icon(Icons.person_outline,size: 25,):Text("$c.img",style: TextStyle(fontSize: 20),),
 
     );
   }
