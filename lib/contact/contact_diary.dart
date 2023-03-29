@@ -1,5 +1,7 @@
-import 'package:contact_diary/practice/contactModel.dart';
+
 import 'package:flutter/material.dart';
+
+import 'contactModel.dart';
 
 List<ContactModel> contactList = [
   ContactModel(name: "VIVEK", no: 1000001),
@@ -36,17 +38,25 @@ class _Prac_Contact_DisplayState extends State<Prac_Contact_Display> {
           centerTitle: true,
           elevation: 0,
         ),
-        body: ListView.builder(
-          itemCount: contactList.length,
-          itemBuilder: (context, index) {
-            return ContactTile(
-                name: contactList[index].name, no: contactList[index].no, img: contactList[index].img
-            );
-            },
-        )
+        body: Column(
+          children: [
+            Expanded(
+              child: ListView.builder(
+              itemCount: contactList.length,
+              itemBuilder: (context, index) {
+                return ContactTile(
+                    name: contactList[index].name, no: contactList[index].no, img: contactList[index].img
+                );
+                },
+          ),
+            ),
+            
+        ]
+
       ),
-    );
+    ));
   }
+
   Widget ContactTile({String? name, String? img, int? no})
   {
     return ListTile(
