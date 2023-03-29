@@ -47,7 +47,8 @@ class _Add_ContactState extends State<Add_Contact> {
                   ),
                 ),
 
-                ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
                     onPressed: () {
 
 
@@ -61,7 +62,7 @@ class _Add_ContactState extends State<Add_Contact> {
                   Navigator.pop(context);
 
 
-                }, child: Text("Submit",style: TextStyle(wordSpacing: 2,fontSize: 15),),
+                }, child: Text("Submit",style: TextStyle(wordSpacing: 2,fontSize:20),),
 
                 )
 
