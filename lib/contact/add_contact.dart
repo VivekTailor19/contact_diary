@@ -88,7 +88,7 @@ class _Add_ContactState extends State<Add_Contact> {
                   style:
                       ElevatedButton.styleFrom(backgroundColor: Colors.green),
                   onPressed: () {
-                    int contact = int.parse(tcontact.text);
+                    String contact = tcontact.text;
                     String name = tname.text;
 
                     ContactModel c_add = ContactModel(name: name, no: contact,img: loca);

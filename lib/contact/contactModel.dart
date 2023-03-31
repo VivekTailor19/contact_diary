@@ -1,7 +1,6 @@
 class ContactModel
 {
-  String? name,img;
-  int? no;
+  String? name,img,no;
 
   ContactModel({this.name, this.no, this.img});
 }
