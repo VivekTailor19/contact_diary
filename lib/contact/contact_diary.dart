@@ -47,20 +47,32 @@ class _Prac_Contact_DisplayState extends State<Prac_Contact_Display> {
         backgroundColor: Colors.tealAccent.shade100,
         title: Text("CONTACT DIARY",
             style: TextStyle(
-                fontSize: 25,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: Colors.teal,
                 letterSpacing: 2)),
         centerTitle: true,
         elevation: 0,
-        actions: [InkWell(
+        actions: [
+          InkWell(
           onTap: () async {
-            String link = "https://www.meesho.com/";
+            String link = "https://www.youtube.com/";
             await launchUrl(Uri.parse(link));
           },
-          child: Text("Shopping 🛍️",style:TextStyle(fontSize: 25,color: Colors.teal),
-      ),
-        ),],),
+          child: Icon(Icons.shop,size: 30,color: Colors.black,),
+
+        ),
+          SizedBox(width: 30),
+          InkWell(
+          onTap: () async {
+            String link = "https://poki.com/";
+            await launchUrl(Uri.parse(link));
+          },
+          child: Icon(Icons.videogame_asset,size: 30,color: Colors.black,),
+
+        ),
+          SizedBox(width: 25),
+        ],),
       floatingActionButton: FloatingActionButton(
         child: Icon(
           Icons.add,
