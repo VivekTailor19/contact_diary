@@ -38,6 +38,11 @@ class Prac_Contact_Display extends StatefulWidget {
 }
 
 class _Prac_Contact_DisplayState extends State<Prac_Contact_Display> {
+
+  TextEditingController txtname = TextEditingController();
+  TextEditingController txtno = TextEditingController();
+
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -140,9 +145,20 @@ class _Prac_Contact_DisplayState extends State<Prac_Contact_Display> {
 
                 },
                 icon: Icon(Icons.message, size: 20)),
+
+
             IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.add_circle_outline, size: 20)),
+                onPressed: () {
+
+                  txtname = TextEditingController(text: c.name);
+                  txtno = TextEditingController(text: c.no);
+
+                  updatedialog(i);
+
+                },
+                icon: Icon(Icons.add_circle_outline, size: 25)),
+
+
             IconButton(
                 onPressed: () {
                   setState(() {
@@ -158,6 +174,45 @@ class _Prac_Contact_DisplayState extends State<Prac_Contact_Display> {
           ],
         )
       ],
+    );
+  }
+
+  void updatedialog(int index)
+  {
+    showDialog(context: context,builder: (context) {
+      return AlertDialog(
+        backgroundColor: Colors.greenAccent,
+        content: Column(mainAxisSize: MainAxisSize.min,
+          children: [
+            Text("Update Contact Details",style: TextStyle(fontSize: 35)),
+            SizedBox(height: 20),
+            TextField(controller: txtname),
+            SizedBox(height: 10),
+            TextField(controller: txtno),
+            SizedBox(height: 20),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.lightBlueAccent.shade100),
+              child: Text("✔  Update ✔",style: TextStyle(fontSize: 25)),
+
+              onPressed: () {
+
+                String tname = txtname.text;
+                String tno = txtno.text;
+
+                setState(() {
+                  contactList[index] = ContactModel(name: tname,no: tno);
+                });
+
+                Navigator.pop(context);
+
+                  },
+                )
+
+
+          ],
+        ),
+      );
+    },
     );
   }
 }
